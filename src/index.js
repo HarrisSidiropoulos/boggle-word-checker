@@ -1,9 +1,9 @@
 function checkWord(testBoard, word) {
   const getNeighbors = (i, j) => [
-    [i-1,   j], [i+1, j],   [i,   j-1], // eslint-disable-line
-    [i,   j+1],             [i-1, j-1], // eslint-disable-line
-    [i-1, j+1], [i+1, j-1], [i+1, j+1]] // eslint-disable-line
-  .filter((v) => {
+    [i-1, j-1], [i-1, j], [i-1, j+1], // eslint-disable-line
+    [i,   j-1],           [i,   j+1], // eslint-disable-line
+    [i+1, j-1], [i+1, j], [i+1, j+1], // eslint-disable-line
+  ].filter((v) => {
     return (
       v[0] >= 0 &&
       v[1] >= 0 &&
@@ -15,6 +15,7 @@ function checkWord(testBoard, word) {
   const findWord = (i, j, offset, visited) => {
     // if we have searched every character of word then it must exist on board
     if (offset === word.length) { return true; }
+
     // maintain a visited hash table so cells are not visited more than once
     visited[`(${i},${j})`] = true; // eslint-disable-line
 

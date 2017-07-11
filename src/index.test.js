@@ -64,7 +64,7 @@ describe('checkWord', () => {
         ['G', 'M', 'S', 'E', 'M', 'R', 'S'],
       ];
     });
-    describe('Valid guesses cannot wrap around the edges of the board', () => {
+    describe('Check all possible paths after error', () => {
       it('should return true', () => {
         expect(checkWord(testBoard, 'STRIDE')).to.be.equal(true);
       });
